@@ -6,11 +6,6 @@ Install bootstrap by using below CLI:
 
 npm i bootstrap
 
-Add it in angular.json file inside styles and JS file into scripts.
-
-"node_modules/bootstrap/dist/css/bootstrap.min.css"
-"node_modules/bootstrap/dist/js/bootstrap.min.js"
-
 Add Angular Material by using below CLI:
 
 ng add @angular/material
