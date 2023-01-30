@@ -1,0 +1,22 @@
+<div style="background-color: black; color: white;">
+  <table style="width: 100%;" id="mainTopBar">
+    <tr>
+      <td>
+    <h2 id="pageTitle">{{title}}</h2>
+  </td>
+
+  <td style="text-align: right; margin-right: 10px;">
+    <a routerLink="AboutUs" id="AboutUs" style="color:white;">About Hyland</a> |
+    <a routerLink="Registration" id="Registration" style="color:white;">Employee Registration</a> |
+    <a routerLink="SalaryInfo" id="SalaryInfo" style="color:white;">Calculate Salary</a> |
+    <a routerLink="ContactUs" id="ContactUs" style="color:white;">Contact Us</a>
+  </td>
+  </tr>
+  </table>
+</div>
+
+
+
+<div style="width:100%;margin-top:10px; background-color: lightgreen;" id="routerOutletDiv">
+<router-outlet></router-outlet>
+</div>

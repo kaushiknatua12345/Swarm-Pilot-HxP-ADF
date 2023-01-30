@@ -1,0 +1,31 @@
+import { ComponentFixture, TestBed } from '@angular/core/testing';
+
+import { ContactUsComponent } from './contact-us.component';
+
+describe('ContactUsComponent', () => {
+  let component: ContactUsComponent;
+  let fixture: ComponentFixture<ContactUsComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [ ContactUsComponent ]
+    })
+    .compileComponents();
+
+    fixture = TestBed.createComponent(ContactUsComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create', () => {
+    expect(component).toBeTruthy();
+  });
+
+  it(`should have as title 'Hyland Contact'`, () => {
+    const fixture = TestBed.createComponent(ContactUsComponent);
+    const app = fixture.componentInstance;
+    fixture.detectChanges();
+    const nativeElement=fixture.debugElement.nativeElement;
+    expect(nativeElement.querySelector('#title').textContent).toContain('Hyland Contact Info');
+  });
+});

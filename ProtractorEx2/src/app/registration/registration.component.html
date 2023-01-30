@@ -1,0 +1,65 @@
+<h2 id="pageTitle">{{title}}</h2>
+
+<br/>
+
+<form [formGroup]="employeeRegistrationForm" class="RegistrationForm">
+<div class="form-group">
+    <label for="EmployeeName">
+        Student Name
+    </label>
+    <input type="text" id="EmployeeName" name="EmployeeName"
+    placeholder="Enter Employee Name" class="form-control" formControlName="employeeName">
+    <div class="text-danger"
+    *ngIf="employeeRegistrationForm.controls['employeeName'].touched &&
+    employeeRegistrationForm.controls['employeeName'].invalid">
+    <div *ngIf="employeeRegistrationForm.controls['employeeName'].errors.required">
+        * Employee Name Required
+    </div>
+    <div *ngIf="employeeRegistrationForm.controls['employeeName'].errors.minlength">
+        * Employee Name should be 6 characters minimum long
+    </div>
+</div>
+</div>
+<br/>
+
+<div class="form-group">
+    <label for="EmailId">
+        Email Id:
+    </label>
+    <input type="text" id="EmailId" name="EmailId"
+    placeholder="Enter Email Id" class="form-control" formControlName="emailId">
+
+    <div class="text-danger"
+    *ngIf="employeeRegistrationForm.controls['emailId'].touched &&
+    employeeRegistrationForm.controls['emailId'].invalid">
+    <div *ngIf="employeeRegistrationForm.controls['emailId'].errors.required">
+        * Email Id Required
+    </div>
+</div>
+</div>
+<br/>
+
+<div class="form-group">
+  <label for="EmployeeCode">
+      Employee Code:
+  </label>
+  <input type="text" id="EmployeeCode" name="EmployeeCode"
+  placeholder="Enter Employee Code" class="form-control" formControlName="employeeCode">
+
+  <div class="text-danger"
+  *ngIf="employeeRegistrationForm.controls['employeeCode'].touched &&
+  employeeRegistrationForm.controls['employeeCode'].invalid">
+  <div *ngIf="employeeRegistrationForm.controls['employeeCode'].errors.required">
+      * Employee Code Required
+  </div>
+</div>
+</div>
+<br/>
+
+
+<input type="submit" id="submitBtn" [disabled]="employeeRegistrationForm.invalid" (click)="SubmitForm()" value="Register" class="btn btn-success">
+
+</form>
+
+<br/>
+<h3 id="success-msg">{{message}}</h3>
