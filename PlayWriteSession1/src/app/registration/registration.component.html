@@ -1,0 +1,64 @@
+<h2>{{title}}</h2>
+
+<div class="form-group">
+  <span id="success-msg" *ngIf="message!==''">{{message}}</span>
+</div>
+
+<br/>
+
+<form [formGroup]="RegistrationForm">
+<div class="form-group">
+    <label for="EmployeeName">
+        Employee Name:
+    </label>
+    <input type="text" id="EmployeeName" name="EmployeeName"
+    placeholder="Enter Employee Name" class="form-control" formControlName="EmployeeName">
+    <div class="text-danger"
+    *ngIf="RegistrationForm.controls['EmployeeName'].touched &&
+    RegistrationForm.controls['EmployeeName'].invalid">
+    <div *ngIf="RegistrationForm.controls['EmployeeName'].errors.required">
+        * Employee Name Required
+    </div>
+</div>
+</div>
+<br/>
+
+<div class="form-group">
+    <label for="EmployeeCode">
+      Employee Code:
+    </label>
+    <input type="text" id="EmployeeCode" name="EmployeeCode"
+    placeholder="Enter Employee Code" class="form-control" formControlName="EmployeeCode">
+
+    <div class="text-danger"
+    *ngIf="RegistrationForm.controls['EmployeeCode'].touched &&
+    RegistrationForm.controls['EmployeeCode'].invalid">
+    <div *ngIf="RegistrationForm.controls['EmployeeCode'].errors.required">
+        * Employee Code Required
+    </div>
+</div>
+</div>
+<br/>
+
+<div class="form-group">
+    <label for="Department">
+      Department:
+    </label>
+    <input type="text" id="Department" name="Department"
+    placeholder="Enter Department" class="form-control" formControlName="Department">
+
+    <div class="text-danger"
+    *ngIf="RegistrationForm.controls['Department'].touched &&
+    RegistrationForm.controls['Department'].invalid">
+    <div *ngIf="RegistrationForm.controls['Department'].errors.required">
+        * Department Required
+    </div>
+</div>
+</div>
+
+
+<br/>
+
+<input type="submit" id="submitBtn" [disabled]="RegistrationForm.invalid" (click)="SubmitForm()" value="Registration" class="btn btn-success">
+
+</form>
