@@ -1,0 +1,19 @@
+{
+  "employees": [
+    {
+      "id": "1001",
+      "name":"Joel",
+      "email":"joel@hyland.com"
+    },
+    {
+      "id": "1002",
+      "name":"Kaushik",
+      "email":"kaushik@hyland.com"
+    },
+    {
+      "id": "1003",
+      "name":"Kavit",
+      "email":"kavit@gcs.com"
+    }
+  ]
+  }

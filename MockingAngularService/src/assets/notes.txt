@@ -1,0 +1,8 @@
+1. install json server
+npm install --save json-server
+
+2. run json server
+json-server --watch [file_name]
+
+3. install jasmine auto spy package
+npm i --include=dev jasmine-auto-spies
