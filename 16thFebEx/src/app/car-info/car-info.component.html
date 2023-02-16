@@ -1,0 +1,12 @@
+<div class="container">
+  <li class="alert" *ngFor="let car of cars" [ngClass]="{
+    'alert-primary':car.name === 'MG Hector',
+    'alert-secondary':car.name === 'Ford',
+    'alert-success':car.name === 'Kia',
+    'alert-danger':car.name === 'BMW',
+    'alert-warning':car.name === 'Jaguar',
+    'alert-info':car.name === 'Suzuki'
+  }">
+    {{ car.name }}
+  </li>
+</div>
