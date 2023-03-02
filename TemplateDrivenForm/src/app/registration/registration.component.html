@@ -1,0 +1,90 @@
+<h3 style="margin-left: 100px;">Registration</h3>
+
+
+<div class="row" style="width:100%;margin-left: 100px;">
+  <div class="col-md-4 col-md-offset-4" style="margin-top: 50px; border: 1px solid rgb(100, 98, 98); padding: 30px;">
+    <form class="form-horizontal" role="form" #f="ngForm" (ngSubmit)="f.form.valid && onFormSubmit()">
+      <fieldset>
+
+        <div class="form-group">
+          <label class="col-sm-2 control-label" for="textinput">Full Name:</label>
+          <div class="col-sm-10">
+            <input type="text" name="fullname" placeholder="Enter Name" class="form-control"
+            [(ngModel)]="model.fullname" [ngClass]="{'invalid-data': fullname.invalid && f.submitted,
+            'valid-data': fullname.valid && f.submitted}"
+              required #fullname="ngModel">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-2 control-label" for="textinput">Username:</label>
+          <div class="col-sm-10">
+            <input type="text" name="username" placeholder="Enter Username" class="form-control"
+            [(ngModel)]="model.username" [ngClass]="{'invalid-data': username.invalid && f.submitted,
+            'valid-data': username.valid && f.submitted}"
+              required #username="ngModel">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-2 control-label" for="textinput">Password:</label>
+          <div class="col-sm-4">
+            <input type="password" name="password" placeholder="Enter Password" class="form-control"
+            [(ngModel)]="model.password" [ngClass]="{'invalid-data': password.invalid && f.submitted,
+            'valid-data': password.valid && f.submitted}"
+              required #password="ngModel">
+          </div>
+
+          <label class="col-sm-2 control-label" for="textinput">Mobile:</label>
+          <div class="col-sm-6">
+            <input type="number" name="mobilenumber" placeholder="Enter Mobile Number" class="form-control"
+            [(ngModel)]="model.mobilenumber" [ngClass]="{'invalid-data': mobilenumber.invalid && f.submitted,
+            'valid-data': mobilenumber.valid && f.submitted}"
+              required #mobilenumber="ngModel">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-sm-2 control-label" for="textinput">State:</label>
+          <div class="col-sm-10">
+            <select class="form-control" name="state"
+            [(ngModel)]="model.state" #state="ngModel"
+            [ngClass]="{'invalid-data': state.invalid && f.submitted, 'valid-data': state.valid && f.submitted}" required>
+              <option [ngValue]="null">---Select---</option>
+              <option *ngFor="let item of states" [value]="item">
+                {{item}}
+              </option>
+            </select>
+
+            <div *ngIf="state.invalid && f.submitted">
+              <span style="color: red;">Please Select State</span>
+            </div>
+          </div>
+        </div>
+
+
+
+        <div class="form-group">
+          <div class="col-sm-12">
+            <span style="color: red;">Please Agree with Terms & Conditions.
+              <input type="checkbox" name="agreement" class="form-check-input"
+              [(ngModel)]="model.agreement" [ngClass]="{'invalid-data': aggrement.invalid && f.submitted,
+              'valid-data': aggrement.valid && f.submitted}"
+              required #aggrement="ngModel">
+            </span>
+          </div>
+
+        </div>
+
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <div class="pull-right">
+              <button type="submit" class="btn btn-primary" style="margin: 4px;">Save</button>
+              <button type="reset" class="btn btn-default">Reset</button>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</div>

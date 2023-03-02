@@ -1,0 +1,29 @@
+<h3 style="margin-left: 100px;">Login</h3>
+
+<div style="margin-left: 100px; border: 2px solid black; width: 500px; padding: auto;">
+<form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)">
+  <br/>
+  <div>
+    <label>
+      Username:
+      <input formControlName="username" placeholder="Enter Username">
+    </label>
+    <div *ngIf="myForm.get('username').invalid && (myForm.get('username').dirty || myForm.get('username').touched)">
+      <h3 style="color: red">Please provide username.</h3>
+    </div>
+  </div>
+  <br/><br/>
+  <div>
+    <label>
+      Password:
+      <input formControlName="password" placeholder="Enter Password" type="password">
+    </label>
+    <div *ngIf="myForm.get('password').invalid && (myForm.get('password').dirty || myForm.get('password').touched)">
+      <h3 style="color: red">Please provide password.</h3>
+    </div>
+  </div>
+ <br/>
+  <button type="submit" [disabled]="myForm.invalid">Login</button>
+</form>
+<br/>
+</div>
