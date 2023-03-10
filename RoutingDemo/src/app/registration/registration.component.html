@@ -1,0 +1,22 @@
+<div class="container">
+  <legend>Add New Customer</legend>
+  <form>
+    <div class="mb-3">
+      <label for="txtcustomerid" class="form-label">Id</label>
+      <input type="text" name="customerid" [(ngModel)] = "customer.id" class="form-control" id="txtcustomerid" required/>
+    </div>
+    <div class="mb-3">
+      <label for="txtcustomername" class="form-label">Name</label>
+      <input type="text" name="customername" [(ngModel)] = "customer.name" class="form-control" id="txtcustomername" required/>
+    </div>
+    <div class="mb-3">
+      <label for="txtemail" class="form-label">Email</label>
+      <input type="text" name="email" [(ngModel)] = "customer.email" class="form-control" id="txtemail" required/>
+    </div>
+    <div class="mb-3">
+      <label for="txtpassword" class="form-label">Password</label>
+      <input type="password" name="password" [(ngModel)] = "customer.password" class="form-control" id="txtpassword" required />
+    </div>
+    <button type="button" (click)="AddCustomers()" class="btn btn-primary">Register</button>
+  </form>
+</div>
